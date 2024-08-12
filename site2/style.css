@@ -1,0 +1,108 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #333; /* Dark grey background */
+    color: #fff; /* White text for contrast */
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background: #444; /* Darker grey background for container */
+    color: #fff; /* White text for contrast inside container */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    padding: 20px;
+    max-width: 800px;
+}
+
+h1 {
+    color: #d24d57;
+    font-size: 24px;
+    margin-bottom: 20px;
+    background: linear-gradient(-45deg, violet, indigo, blue, green, yellow, orange, red);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: Gradient 15s ease infinite;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.countdown-item {
+    perspective: 1000px;
+    width: 120px;
+    height: 60px;
+}
+
+.countdown-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    background: linear-gradient(-45deg, violet, indigo, blue, green, yellow, orange, red);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: Gradient 15s ease infinite;
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.back {
+    transform: rotateX(180deg);
+}
+
+.flip .front {
+    transform: rotateX(180deg);
+}
+
+.flip .back {
+    transform: rotateX(360deg);
+}
+
+@keyframes Gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+/* Existing CSS content */
+
+.play-button {
+    background-color: #ff4500; /* Or any other color */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Makes it round */
+/* Existing CSS content */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.play-button {
+    /* Existing styles for play-button */
+}
+
+.play-button.spin {
+    animation: spin 2s linear;
+}
+
+/* Other existing styles */

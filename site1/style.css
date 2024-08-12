@@ -1,0 +1,82 @@
+/* style.css */
+
+/* Ensure the body and HTML have full height */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: transparent; /* Set header background to transparent */
+    z-index: 1000;
+}
+
+/* Navigation menu styles */
+.navigation-menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 1em 0;
+    background-color: transparent; /* Set navigation menu background to transparent */
+    box-shadow: none; /* Remove box-shadow */
+    z-index: 1000;
+    color: white; /* Set font color to white */
+}
+
+.navigation-menu a {
+    text-decoration: none;
+    color: white; /* Set default color to white */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navigation-menu a:hover {
+    color: #007BFF; /* Change color on hover to blue */
+}
+
+/* Welcome message styles */
+.welcome-message {
+    color: white; /* Set text color to white */
+}
+
+/* Hero section styles */
+.hero {
+    margin-top: 50px; /* Space for header */
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: transparent; /* Set hero background to transparent */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 1em;
+    background: #ddd;
+}
+
+/* Animation wrapper styles */
+#animation-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Move animation wrapper behind other elements */
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+}

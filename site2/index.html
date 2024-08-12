@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown to Taylor Swift Concert</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Count down to Taylor Swift Wembley 2023 with Dad and Lena</h1>
+        <div id="countdown">
+            <div class="countdown-item" id="months"><div class="countdown-face front"><span></span> Months</div><div class="countdown-face back"><span></span> Months</div></div>
+            <div class="countdown-item" id="weeks"><div class="countdown-face front"><span></span> Weeks</div><div class="countdown-face back"><span></span> Weeks</div></div>
+            <div class="countdown-item" id="days"><div class="countdown-face front"><span></span> Days</div><div class="countdown-face back"><span></span> Days</div></div>
+            <div class="countdown-item" id="hours"><div class="countdown-face front"><span></span> Hours</div><div class="countdown-face back"><span></span> Hours</div></div>
+            <div class="countdown-item" id="minutes"><div class="countdown-face front"><span></span> Minutes</div><div class="countdown-face back"><span></span> Minutes</div></div>
+            <div class="countdown-item" id="seconds"><div class="countdown-face front"><span></span> Seconds</div><div class="countdown-face back"><span></span> Seconds</div></div>
+        </div>
+    </div>
+
+    <!-- Audio player for TS.mp3 -->
+    <audio controls autoplay loop>
+        <source src="TS.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="countdown.js"></script>
+    
+<!-- Existing HTML content -->
+
+<!-- 3D Ball Button -->
+<button id="playButton" class="play-button">Play</button>
+
+<!-- Existing Audio tag -->
+<audio id="audioPlayer" controls loop style="display:none;">
+    <source src="TS.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<!-- Existing Scripts -->
+<script src="countdown.js"></script>
+<script>
+    document.getElementById('playButton').addEventListener('click', function() {
+        var audioPlayer = document.getElementById('audioPlayer');
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+        } else {
+            audioPlayer.pause();
+        }
+    });
+</script>
+</body>
+</html>

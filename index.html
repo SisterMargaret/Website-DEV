@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        .menu {
+            position: absolute;
+            list-style: none;
+            padding: 0;
+            z-index: 10;
+        }
+        .menu li {
+            margin: 10px;
+        }
+        .menu li a {
+            display: block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .menu li a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="menu">
+            <li><a href="Site1/index.html">REINV8</a></li>
+            <li><a href="Site2/index.html">Taylor Swift</a></li>
+            <li><a href="Site3/index.html">GI Food App</a></li>
+            <li><a href="Site4/index.html">Community Mentalhealth App</a></li>
+        </ul>
+        <div id="webgl-output"></div>
+    </div>
+    <script>
+        let scene = new THREE.Scene();
+        let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
+        let renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('webgl-output').appendChild(renderer.domElement);
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+        scene.add(directionalLight);
+
+        const loader = new THREE.TextureLoader();
+        let materials = [
+            new THREE.MeshBasicMaterial({ map: loader.load('logos/1.png') }),
+            new THREE.MeshBasicMaterial({ map: loader.load('logos/2.png') }),
+            new THREE.MeshBasicMaterial({ map: loader.load('logos/1.gif') }),
+            new THREE.MeshBasicMaterial({ map: loader.load('logos/1.png') }),
+            new THREE.MeshBasicMaterial({ map: loader.load('logos/2.png') }),
+            new THREE.MeshBasicMaterial({ map: loader.load('logos/1.gif') })
+        ];
+
+        const geometry = new THREE.BoxGeometry(2, 2, 2);
+        const cube = new THREE.Mesh(geometry, materials);
+        scene.add(cube);
+
+        function animate() {
+            requestAnimationFrame(animate);
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>

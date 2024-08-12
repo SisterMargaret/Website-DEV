@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Tracking App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="nav-link" onclick="toggleView()">Home</a>
+            <!-- Additional navigation links can be added here -->
+        </nav>
+    </header>
+
+    <main>
+        <section id="foodTracking" class="content-section">
+            <h1>Track Your Food Intake</h1>
+            <form id="foodTrackingForm">
+                <!-- Search box for filtering food items -->
+                <label for="foodItemSearch">Search Food Item:</label>
+                <input type="text" id="foodItemSearch" placeholder="Start typing here...">
+                
+                <label for="foodItemSelect">Food Item:</label>
+                <select id="foodItemSelect" name="foodItem"></select>
+                
+                <label for="symptomCheck">Causes Symptoms?</label>
+                <input type="checkbox" id="symptomCheck" name="symptomCheck">
+                
+                <label for="symptomDesc">Describe Symptoms:</label>
+                <textarea id="symptomDesc" name="symptomDesc"></textarea>
+                
+                <button type="submit">Log Food</button>
+            </form>
+            <button onclick="toggleView()">Show Logged Foods</button>
+        </section>
+
+        <section id="foodLogList" class="content-section" style="display:none;">
+            <h1>Logged Food Items</h1>
+            <ul id="loggedFoods"></ul>
+            <button onclick="toggleView()">Back to Form</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Diet Tracking App</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
